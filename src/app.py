@@ -7,9 +7,39 @@ from src.agentes import agente_extraccion, agente_analisis, agente_respuesta
 from datetime import datetime
 import os
 
-# Configuración de la página
-st.set_page_config(page_title="Mini RAG Multiagente", layout="centered")
-st.markdown("<h1 style='text-align: center;'>🧠 Mini RAG Multiagente</h1>", unsafe_allow_html=True)
+# =============================
+#   CONFIGURACIÓN DE LA PÁGINA
+# =============================
+st.set_page_config(
+    page_title="Mini RAG Multiagente",
+    page_icon="🧠",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Encabezado principal con estilo
+st.markdown(
+    """
+    <style>
+    .main-title {
+        text-align: center;
+        font-size: 48px;
+        font-weight: bold;
+        color: #2E86C1;
+        margin-top: -30px;
+    }
+    .subtitle {
+        text-align: center;
+        font-size: 20px;
+        color: #555;
+        margin-bottom: 30px;
+    }
+    </style>
+    <h1 class="main-title">🧠 Mini RAG Multiagente</h1>
+    <p class="subtitle">Proyecto Final - Inteligencia Artificial</p>
+    """,
+    unsafe_allow_html=True
+)
 
 # Inicializar estado de sesión
 if "mensajes" not in st.session_state:
@@ -226,9 +256,3 @@ document.getElementById('scroll-anchor').scrollIntoView();
 
 if html_chat.strip() != '<div class="chat-container" id="chat-box"></div>':
     st.markdown(html_chat, unsafe_allow_html=True)
-
-
-
-
-
-
