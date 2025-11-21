@@ -1,0 +1,7 @@
+langchain
+openai
+faiss-cpu
+tesseract
+pdfplumber
+streamlit
+python-dotenv
